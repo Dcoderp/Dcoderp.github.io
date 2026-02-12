@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Info - ABSENKU</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #000, #555);
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 1em;
+            display: flex;
+            align-items: center;
+        }
+        header img {
+            height: 40px;
+            margin-right: 1em;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+        nav {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 0.5em;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 1em;
+            text-decoration: none;
+            padding: 0.5em 1em;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        nav a:hover {
+            background-color: #444;
+        }
+        .container {
+            padding: 2em;
+            max-width: 600px;
+            margin: 2em auto;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        .profile-info {
+            text-align: center;
+        }
+        .profile-info img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 1em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Logo">
+        <h1>ABSENKU</h1>
+    </header>
+    <nav>
+        <a href="homepage.html">Home</a>
+        <a href="profile-info.html">Profile Info</a>
+        <a href="profile-settings.html">Profile Settings</a>
+    </nav>
+    <div class="container">
+        <div class="profile-info">
+            <img src="profile-placeholder.png" alt="Profile Picture">
+            <h2>John Doe</h2>
+            <p>Email: johndoe@example.com</p>
+            <p>Position: Software Engineer</p>
+            <p>Status: Active</p>
+        </div>
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

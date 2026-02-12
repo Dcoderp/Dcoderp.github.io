@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - ABSENKU</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #000, #555);
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 1em;
+            display: flex;
+            align-items: center;
+        }
+        header img {
+            height: 40px;
+            margin-right: 1em;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+        nav {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 0.5em;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 1em;
+            text-decoration: none;
+            padding: 0.5em 1em;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        nav a:hover {
+            background-color: #444;
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 2em;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            width: 300px;
+            margin: auto;
+            margin-top: 10%;
+            text-align: center;
+        }
+        input {
+            width: 100%;
+            padding: 0.5em;
+            margin: 0.5em 0;
+            border: none;
+            border-radius: 4px;
+            background: #444;
+            color: white;
+        }
+        button {
+            background: linear-gradient(90deg, #000, #555);
+            color: white;
+            padding: 0.5em;
+            border: none;
+            width: 100%;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        button:hover {
+            background: linear-gradient(90deg, #555, #000);
+        }
+        .error {
+            color: red;
+            font-size: 0.9em;
+            margin-top: 0.5em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="ABSENKU.png" alt="Logo">
+        <h1>ABSENKU</h1>
+    </header>
+    <nav>
+        <a href="login.html">Login</a>
+        <a href="about-us.html">About Us</a>
+    </nav>
+    <div class="container">
+        <h1>Login to ABSENKU</h1>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+            <p id="errorMessage" class="error" style="display: none;">Invalid username or password</p>
+        </form>
+    </div>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username === 'test' && password === 'test') {
+                window.location.href = 'homepage.html';
+            } else {
+                document.getElementById('errorMessage').style.display = 'block';
+            }
+        });
+    </script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

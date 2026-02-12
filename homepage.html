@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage - ABSENKU</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #000, #555);
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 1em;
+            display: flex;
+            align-items: center;
+        }
+        header img {
+            height: 40px;
+            margin-right: 1em;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+        nav {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 0.5em;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 1em;
+            text-decoration: none;
+            padding: 0.5em 1em;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        nav a:hover {
+            background-color: #444;
+        }
+        .container {
+            padding: 2em;
+        }
+        .card {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            padding: 1.5em;
+        }
+        .card-title {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        .clock {
+            font-size: 2.5em;
+            font-weight: bold;
+            text-align: center;
+        }
+        .schedule {
+            margin-top: 2em;
+        }
+        .schedule h3 {
+            font-size: 1.8em;
+            margin-bottom: 1em;
+        }
+        .schedule table {
+            width: 100%;
+            color: white;
+            border-collapse: collapse;
+        }
+        .schedule th, .schedule td {
+            padding: 0.8em;
+            text-align: left;
+            border-bottom: 1px solid #444;
+        }
+        .schedule th {
+            background: #333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="D:\Athallah\Algoritmik_PS2\ABSENKU\ABSENKU.png" alt="Logo">
+        <h1>ABSENKU</h1>
+    </header>
+    <nav>
+        <a href="login.html">Login</a>
+        <a href="homepage.html">Home</a>
+        <a href="checkin.html">Check-In</a>
+        <a href="workpage.html">Workpage</a>
+    </nav>
+    <div class="container">
+        <h2>Dashboard</h2>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <h5 class="card-title">Last Work</h5>
+                    <p class="card-text">Completed task: Project A</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <h5 class="card-title">Next Meeting</h5>
+                    <p class="card-text">Team sync at 10:00 AM, 15th Oct</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <h5 class="card-title">Clock</h5>
+                    <p class="clock" id="clock"></p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <h5 class="card-title">Next Salary</h5>
+                    <p class="card-text">Expected: $2000 on 30th Oct</p>
+                    <p class="card-text">Deductions: $100 for late attendance</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <h5 class="card-title">Project Groups</h5>
+                    <p class="card-text">Group A: John, Sarah, Mike</p>
+                    <p class="card-text">Group B: Alice, Bob, Emma</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="card">
+                    <h5 class="card-title">Work Party Schedule</h5>
+                    <p class="card-text">Date: 20th Oct</p>
+                    <p class="card-text">Time: 7:00 PM</p>
+                    <p class="card-text">Location: Office Lounge</p>
+                </div>
+            </div>
+        </div>
+        <div class="schedule">
+            <h3>Weekly Schedule</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Day</th>
+                        <th>Activity</th>
+                        <th>Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Monday</td>
+                        <td>Team Meeting</td>
+                        <td>10:00 AM</td>
+                    </tr>
+                    <tr>
+                        <td>Tuesday</td>
+                        <td>Project Work</td>
+                        <td>9:00 AM - 5:00 PM</td>
+                    </tr>
+                    <tr>
+                        <td>Wednesday</td>
+                        <td>Client Presentation</td>
+                        <td>2:00 PM</td>
+                    </tr>
+                    <tr>
+                        <td>Thursday</td>
+                        <td>Code Review</td>
+                        <td>11:00 AM</td>
+                    </tr>
+                    <tr>
+                        <td>Friday</td>
+                        <td>Work Party</td>
+                        <td>7:00 PM</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

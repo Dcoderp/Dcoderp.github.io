@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check-In - ABSENKU</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #000, #555);
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 1em;
+            display: flex;
+            align-items: center;
+        }
+        header img {
+            height: 40px;
+            margin-right: 1em;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+        nav {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 0.5em;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 1em;
+            text-decoration: none;
+            padding: 0.5em 1em;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        nav a:hover {
+            background-color: #444;
+        }
+        .container {
+            padding: 2em;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        button {
+            background: linear-gradient(90deg, #000, #555);
+            color: white;
+            padding: 0.5em;
+            border: none;
+            cursor: pointer;
+            margin: 0.5em;
+            border-radius: 4px;
+        }
+        button:hover {
+            background: linear-gradient(90deg, #555, #000);
+        }
+        #log {
+            margin-top: 1em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="D:\Athallah\Algoritmik_PS2\ABSENKU\ABSENKU.png" alt="Logo">
+        <h1>ABSENKU</h1>
+    </header>
+    <nav>
+        <a href="login.html">Login</a>
+        <a href="homepage.html">Home</a>
+        <a href="checkin.html">Check-In</a>
+        <a href="workpage.html">Workpage</a>
+    </nav>
+    <div class="container">
+        <p>Click to check in or out. Your logs are saved locally in this browser.</p>
+        <button onclick="checkIn('Check-In')">Check-In</button>
+        <button onclick="checkIn('Check-Out')">Check-Out</button>
+        <div id="log">
+            <h3>Attendance Log</h3>
+            <ul id="logList"></ul>
+        </div>
+    </div>
+    <script>
+        function checkIn(type) {
+            const now = new Date().toLocaleString();
+            const log = `${type} at ${now}`;
+            let logs = JSON.parse(localStorage.getItem('attendanceLogs')) || [];
+            logs.push(log);
+            localStorage.setItem('attendanceLogs', JSON.stringify(logs));
+            displayLogs();
+        }
+        function displayLogs() {
+            const logs = JSON.parse(localStorage.getItem('attendanceLogs')) || [];
+            const list = document.getElementById('logList');
+            list.innerHTML = '';
+            logs.forEach(log => {
+                const li = document.createElement('li');
+                li.textContent = log;
+                list.appendChild(li);
+            });
+        }
+        displayLogs();
+    </script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

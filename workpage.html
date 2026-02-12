@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workpage - ABSENKU</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #000, #555);
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 1em;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        header img {
+            height: 40px;
+            margin-right: 1em;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+        nav {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 0.5em;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 1em;
+            text-decoration: none;
+            padding: 0.5em 1em;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        nav a:hover {
+            background-color: #444;
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 2em;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            max-width: 900px;
+            margin: 2em auto;
+        }
+        textarea {
+            width: 100%;
+            height: 150px;
+            padding: 0.5em;
+            background: #444;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            margin-bottom: 1em;
+        }
+        button {
+            background: linear-gradient(90deg, #000, #555);
+            color: white;
+            padding: 0.5em 1em;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: transform 0.2s;
+        }
+        button:hover {
+            background: linear-gradient(90deg, #555, #000);
+            transform: scale(1.05);
+        }
+        .task-list {
+            margin-top: 1em;
+            background: #222;
+            padding: 1em;
+            border-radius: 4px;
+        }
+        .task-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5em 0;
+            border-bottom: 1px solid #444;
+        }
+        .task-item:last-child {
+            border-bottom: none;
+        }
+        .task-item button {
+            background: none;
+            border: none;
+            color: #ff4d4d;
+            cursor: pointer;
+        }
+        .task-item button:hover {
+            color: #ff1a1a;
+        }
+        .task-summary {
+            margin-top: 2em;
+            background: #333;
+            padding: 1em;
+            border-radius: 8px;
+        }
+        .task-summary h5 {
+            margin-bottom: 1em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+            <div style="display: flex; align-items: center;">
+                <img src="logo.png" alt="Logo">
+                <h1>ABSENKU</h1>
+            </div>
+            <button onclick="window.location.href='profile-info.html'" style="background: none; border: none; color: white; cursor: pointer;">
+                <i class="bi bi-person-circle" style="font-size: 1.5em;"></i>
+            </button>
+        </div>
+    </header>
+    <nav>
+        <a href="login.html">Login</a>
+        <a href="homepage.html">Home</a>
+        <a href="checkin.html">Check-In</a>
+        <a href="workpage.html">Workpage</a>
+    </nav>
+    <div class="container">
+        <h2>Your Work Dashboard</h2>
+        <p>Add tasks or notes here.</p>
+        <textarea id="notes" placeholder="Enter your work notes..."></textarea>
+        <button onclick="saveNotes()">Save Notes</button>
+        <div id="savedNotes" class="task-list"></div>
+        <div class="task-summary">
+            <h5>Task Summary</h5>
+            <p>Total Tasks: <span id="totalTasks">0</span></p>
+            <p>Completed Tasks: <span id="completedTasks">0</span></p>
+        </div>
+    </div>
+    <script>
+        let totalTasks = 0;
+        let completedTasks = 0;
+
+        function saveNotes() {
+            const notes = document.getElementById('notes').value;
+            if (notes.trim() === '') return;
+
+            const taskList = document.getElementById('savedNotes');
+            const taskItem = document.createElement('div');
+            taskItem.className = 'task-item';
+            taskItem.innerHTML = `
+                <span>${notes}</span>
+                <button onclick="deleteTask(this)"><i class="bi bi-trash"></i></button>
+            `;
+            taskList.appendChild(taskItem);
+
+            document.getElementById('notes').value = '';
+            totalTasks++;
+            updateSummary();
+        }
+
+        function deleteTask(button) {
+            const taskItem = button.parentElement;
+            taskItem.remove();
+            totalTasks--;
+            updateSummary();
+        }
+
+        function updateSummary() {
+            document.getElementById('totalTasks').textContent = totalTasks;
+            document.getElementById('completedTasks').textContent = completedTasks;
+        }
+    </script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
