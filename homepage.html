@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage - ABSENKU</title>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TJNMT73M4C"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-TJNMT73M4C');
+    </script>
     <!-- Bootstrap CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css"
+        rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
         body {
             font-family: 'Roboto', sans-serif;
             background: linear-gradient(135deg, #000, #555);
@@ -16,6 +28,7 @@
             margin: 0;
             padding: 0;
         }
+
         header {
             background: rgba(0, 0, 0, 0.8);
             backdrop-filter: blur(10px);
@@ -24,20 +37,24 @@
             display: flex;
             align-items: center;
         }
+
         header img {
             height: 40px;
             margin-right: 1em;
         }
+
         header h1 {
             margin: 0;
             font-size: 1.5em;
         }
+
         nav {
             background: rgba(0, 0, 0, 0.8);
             backdrop-filter: blur(10px);
             padding: 0.5em;
             text-align: center;
         }
+
         nav a {
             color: white;
             margin: 0 1em;
@@ -46,12 +63,15 @@
             border-radius: 4px;
             transition: background-color 0.3s;
         }
+
         nav a:hover {
             background-color: #444;
         }
+
         .container {
             padding: 2em;
         }
+
         .card {
             background: rgba(0, 0, 0, 0.8);
             backdrop-filter: blur(10px);
@@ -61,37 +81,46 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             padding: 1.5em;
         }
+
         .card-title {
             font-size: 1.5em;
             font-weight: bold;
         }
+
         .clock {
             font-size: 2.5em;
             font-weight: bold;
             text-align: center;
         }
+
         .schedule {
             margin-top: 2em;
         }
+
         .schedule h3 {
             font-size: 1.8em;
             margin-bottom: 1em;
         }
+
         .schedule table {
             width: 100%;
             color: white;
             border-collapse: collapse;
         }
-        .schedule th, .schedule td {
+
+        .schedule th,
+        .schedule td {
             padding: 0.8em;
             text-align: left;
             border-bottom: 1px solid #444;
         }
+
         .schedule th {
             background: #333;
         }
     </style>
 </head>
+
 <body>
     <header>
         <img src="D:\Athallah\Algoritmik_PS2\ABSENKU\ABSENKU.png" alt="Logo">
@@ -201,4 +230,5 @@
     <!-- Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
